@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+  
+.section{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section video {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.section h1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    background: white;
+
+    text-align: center;
+    color: black;
+    line-height: 100vh;
+    font-size: 36rem;
+    font-weight: bolder;
+    font-family: Noto sans-serif;
+    letter-spacing: 30px;
+    mix-blend-mode: screen;
+
+
+}
+
+.section .goBack {
+    position: absolute;
+    top: 85%;
+    justify-content: space-around;
+    margin: auto;
+}
+
+h2 {
+    letter-spacing: 2px;
+}
+
+.btn {
+    color: white;
+    background: black;
+    margin-left: 35%;
+    border-radius: 15px;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <video autoplay loop muted>
+            <source src="background.mp4" type="video/mp4">
+            
+        </video>
+        <h1 class="display-1">404</h1>
+        <div class="goBack justify-content-around">
+            <h2>Feels like You are Lost.</h2>
+            <button href="#" class="btn">Go Back</button>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

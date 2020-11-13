@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Front-ender:The blog for coders</title>
+         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='fav-icon.png') }}">
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+ <link rel="stylesheet"  href="{{ url_for('static', filename='styles.css') }}">
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"> <!-- <img src="{{url_for('static', filename='navbar-logo.svg')}}"/>--><h4 class="my-2 font-family-sans font-weight-bol">Front-ender</h4></a>
+                
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Journey</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#blog">Blog-posts</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/code" target="_blank">Code</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" style="background-image: url({{ url_for ('static', filename = 'header-bg.jpg') }});">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Front-ender</div>
+                <div class="masthead-subheading text-uppercase"><b>Imagination, creativity and finesse<b></div>
+                <a class="btn btn-danger btn-xl text-uppercase js-scroll-trigger" href="https://www.youtube.com/channel/UCmmeBg1rMbf7Hvql0Pb3LHg">Youtube</a>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Skills</h2>
+                    <h3 class="section-subheading text-muted">The most complicated skill is to be simple</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span style="font-size:8em" class="fab fa-html5">
+                        </span>
+                        <h4 class="my-3">HTML</h4>
+                        <p class="text-muted">Best skilled in Hyper Text Mark-up Language</p>
+                    </div>
+                    <div class="col-md-4">
+                    <span style="font-size:8em" class="fab fa-css3-alt"></span>
+                        </span>
+                        <h4 class="my-3">Responsive Design</h4>
+                        <p class="text-muted">Creativity at its peak with CSS3.Beautifying websites</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span style="font-size:7em" class="fab fa-wordpress">
+                        </span>
+                        <h4 class="my-3">Wordpress</h4>
+                        <p class="text-muted">Within a seconds,Completely resposnive and CMS based designs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                </div>
+                <div class="row my-3">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid"  src="{{url_for('static', filename='01-thumbnail.png')}}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Landing page</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                
+                                <img class="img-fluid"  src="{{url_for('static', filename='02-thumbnail.png')}}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Creative cards</div>
+                                <div class="portfolio-caption-subheading text-muted">UI design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                
+                                <img class="img-fluid" src="{{url_for('static', filename='03-thumbnail.png')}}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Page design</div>
+                                <div class="portfolio-caption-subheading text-muted">Creative UI design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                
+                                <img class="img-fluid" src="{{url_for('static', filename='04-thumbnail.png')}}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Complete webpage</div>
+                                <div class="portfolio-caption-subheading text-muted">Responsive web-design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                
+                                <img class="img-fluid" src="{{url_for('static', filename='05-thumbnail.png')}}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Grade calculator</div>
+                                <div class="portfolio-caption-subheading text-muted">Awesome JS project</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{{url_for('static', filename='06-thumbnail.png')}}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Music player</div>
+                                <div class="portfolio-caption-subheading text-muted">HTML,CSS JS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">About</h2>
+                    <h3 class="section-subheading text-muted">A journey of a thousand miles begins with a single step</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{url_for('static', filename='a1.jpg')}}"/></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2018</h4>
+                                <h4 class="subheading">First Step</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">First step towards destination is more than half of the work.Started my Coding journey back in 2018,with basic understanding of web development</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{url_for('static', filename='a2.jpg')}}"/></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>May 2019</h4>
+                                <h4 class="subheading">Became a beginner</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">As a beginner,Started to code some basic and very simple static non-responsive websites.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{url_for('static', filename='a3.jpg')}}"/></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>January 2020</h4>
+                                <h4 class="subheading">Intermediate Front-end dev</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Completed my intermediate level of front-end development and started to code beautiful,responsive and attractive websites.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{url_for('static', filename='a4.jpg')}}"/></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>August 2020</h4>
+                                <h4 class="subheading">First step towards back-end</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">After front-end,Started my back-end journey with python web framewoks i.e Flask and django</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                To
+                                <br />
+                                Be
+                                <br />
+                                Continued...
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Muhammad junaid</h2>
+                    <h3 class="section-subheading text-muted my-3">Code-lover</h3>
+                    <h3 class="section-subheading text-muted my-3">17</h3>
+                    <h3 class="section-subheading text-muted my-3">Productive</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{{url_for('static', filename='2.jpg')}}"/>
+                            <h4>Muhammad junaid</h4>
+                            <p class="text-muted"></p>
+                            <a class="btn btn-dark btn-social mx-2 my-4" href="https://www.instagram.com/muhammadjunaid16/"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2 my-4" href="https://www.facebook.com/hammad.ahmed.3990"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2 my-4" href="https://www.youtube.com/channel/UCmmeBg1rMbf7Hvql0Pb3LHg/"><i class="fab fa-youtube"></i></a>
+                            <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="muhammadjunaid" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Coding is my love,my life</p></div>
+                </div>
+            </div>
+        </section>
+        <!-- Clients-->
+       
+        <!-- Contact-->
+        <section class="page-section" id="blog">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Blog posts</h2>
+                    <h3 class="section-subheading text-muted">Writing,for your solutions</h3>
+                </div>
+                {% for post in posts %}
+                <div class="card my-4">
+                    <div class="card-header">
+                        By:<strong></strong>admin</strong>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{post.title}}</h5>
+                      <p class="card-text">{{ post.content[0:80] }}...</p>
+                      <a href="/post/{{post.id}}" class="btn btn-primary">Continue reading</a>
+                    </div>
+                  </div>
+                  {% endfor %}
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">Copyright © Front-ender 2020</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-right">
+                        <a class="mr-4" href="https://codingswamp.blogspot.com/">Blogger</a>
+                        <a href="https://unsoiled-stumps.000webhostapp.com/">Wordpress</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='close-icon.svg')}}"/></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Landing page</h2>
+                                    <p class="item-intro text-muted">Black panther landing page design</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static',filename='01-thumbnail.png')}}" />
+                                    <p>Black panther landing page design using pure HTML and CSS without any framework</p>
+                                    <ul class="list-inline">
+                                        <li>Date: August 2020</li>
+                                        <li>Category: Illustration</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static',filename='close-icon.svg')}}" alt="close" /> </div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Creative card</h2>
+                                    <p class="item-intro text-muted">Awesome and creative card using HTML and CSS</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static',filename='02-thumbnail.png')}}" />
+                                    <p>On hover,ironman drops down and on hover-out it gos up again,all just by using HTML and CSS</p>
+                                    <ul class="list-inline">
+                                        <li>Date: August 2020</li>
+                                        <li>Category: UI</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static',filename='close-icon.svg')}}" alt="close" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Page design</h2>
+                                    <p class="item-intro text-muted">Creative UI design</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static',filename='03-thumbnail.png')}}"/>
+                                    <p>Ui design card using HTML and CSS with awesome hover effect without any framework</p>
+                                    <ul class="list-inline">
+                                        <li>Date: october 2020</li>
+                                        <li>Category: Creations</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static',filename='close-icon.svg')}}" alt="close" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Complete webpage</h2>
+                                    <p class="item-intro text-muted">Responsive design</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static',filename='04-thumbnail.png')}}" />
+                                    <p>Complete web-design using pure HTML,CSS and JS from scratch(Front-end)</p>
+                                    <ul class="list-inline">
+                                        <li>Date: august 2020</li>
+                                        <li>Category: Front-end design</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static',filename='close-icon.svg')}}" alt="close" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Grade calculator</h2>
+                                    <p class="item-intro text-muted">Awesome JS project</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static',filename='05-thumbnail.png')}}" />
+                                    <p>Awesome JS project using HTML,CSS,JS to calculate result from given marks with percentage and grade</p>
+                                    <ul class="list-inline">
+                                        <li>Date: July 2020</li>
+                                        <li>Category: Javascript project</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static',filename='close-icon.svg')}}" alt="close" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Music player</h2>
+                                    <p class="item-intro text-muted">HTML,CSS,JS</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static',filename='06-thumbnail.png')}}" />
+                                    <p>Awesoe Music player made from scratch using HTML and CSS only</p>
+                                    <ul class="list-inline">
+                                        <li>Date: June 2020</li>
+                                        <li>Category: HTML</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+<!--        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>-->
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,168 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<head>
+    <style type="text/css">
+    /* Tabs*/
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#tabs{
+	background: #007b5e;
+    color: black;
+}
+#tabs h6.section-title{
+    color: #eee;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #f3f3f3;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 4px solid !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+#tabs .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #eee;
+    font-size: 20px;
+}    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height()); 
+          window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
+    <!-- Tabs -->
+<section id="tabs">
+	<div class="container">
+		<h6 class="section-title h1">Admin-Panel</h6>
+		<div class="row">
+			<div class="col-xs-12 ">
+        <hr>
+        <h2>Basic actions</h2>
+        <br>
+        
+        <a href="/add-code"><button class="btn btn-success">Add code</button></a>
+        <a class="btn btn-success" href="/create-post">Add post</a>
+        <a href="/logout"><button class="btn btn-danger">Logout</button></a>
+          <br>
+          <br>
+          <form action="/upload" method="POST">
+            <input type="file" name="file" id="file" accept="image">
+            <button type="submit" class="btn btn-primary">Upload files</button></form>
+        <hr>
+        <nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Posts</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Code</a>
+					</div>
+				</nav>
+				<div class="tab-content px-sm-0" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="container" id="posts">
+                            <div class="row">
+                              <div class="col-md">
+                                <div class="card mt-4">
+                                  <div class="card-body">
+                                    {% for post in post %}
+                                    
+                                      <div class="card mt-3 col-12">
+                                        <div class="card-header">
+                                          <div class="row">
+                                            <div class="col"><strong>{{post.title}}</strong></div>
+                                            <div class="col text-right">
+                                              <a class="btn btn-primary" href="/edit?title={{post[1]}}&post={{post[2]}}&_id={{post[0]}}">Update</a>
+                                              <a class="btn btn-danger" href="/delete/{{ post.id }}">Delete</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card-body">
+                                          {{post.content[0:50]}} 
+                                          <a href="/post/{{post.id}}">... show more</a>
+                                        </div>
+                                      </div>
+                                      <br>
+                                      <hr>
+                                    {% endfor %}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                    </div>
+                    
+					<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="container my-4">
+                            {% for code in codes %}
+                            
+                            <div class="row mb-2">
+                              <div class="col-md-10 mx-auto my-2">
+                                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                  <a href="/delete-code/{{ code.id }}"><button class="btn btn-danger">Delete code</button></a>
+                                  <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">World</strong>
+                                    <h3 class="mb-0">{{ code.title}}</h3>
+                                    <iframe class="mx-auto" width="500" height="315" src="https://www.youtube.com/embed/{{code.src}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="mb-1 text-muted">Nov 12</div>
+                                    <p class="card-text mb-auto">{{ code.tutcode }}</p>
+                                    <a href="#" class="stretched-link">Continue reading</a>
+                                  </div>
+                                </div>
+                              </div>
+                              {% endfor %}
+                          
+                          
+					</div>
+					<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <!--table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                            </tbody>
+                          </table-->
+					</div>
+					<div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+						Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
